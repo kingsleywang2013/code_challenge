@@ -1,0 +1,9 @@
+<h1>Offers#new</h1>
+<p>Find me in app/views/offers/new.html.erb</p>
+<%= form_for @offer do |offer_form| %>
+  <%= offer_form.label :grade %> <%= offer_form.text_field :grade %> <br/>
+  <%= offer_form.label :season %><%= offer_form.text_field :season %><br/>
+  <%= offer_form.label :price %><%= offer_form.text_field :price %><br/>
+  <%= offer_form.label :quantity %><%= offer_form.text_field :quantity %><br/>
+  <%= submit_tag("Create") %>
+<% end %>
