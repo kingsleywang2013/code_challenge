@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_04_015545) do
+ActiveRecord::Schema.define(version: 2019_04_05_001752) do
 
   create_table "bids", force: :cascade do |t|
     t.decimal "season"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_03_04_015545) do
   end
 
   create_table "offers", force: :cascade do |t|
-    t.decimal "season"
+    t.integer "season"
     t.decimal "quantity"
     t.decimal "price"
     t.integer "seller_id"
