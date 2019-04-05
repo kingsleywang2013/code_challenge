@@ -6,6 +6,6 @@
 
 <ul>
   <% Offer.all.each do |o| %>
-    <li>Offer <%= o.grade %>, <%= o.price %> x <%= o.quantity %> (<%= o.season %>) <%= link_to('Edit', edit_offer_path(o.id)) %></li>
+    <li>Offer <%= o.grade %>, <%= o.price %> x <%= o.quantity %> (<%= o.season %>) <%= link_to('Edit', edit_offer_path(o.id)) %> | <%= link_to('Delete', offer_path(o.id), method: :delete, data: { confirm: 'Are you sure to delete?' }) %></li>
   <% end %>
 </ul>

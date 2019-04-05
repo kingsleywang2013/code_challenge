@@ -1,6 +1,6 @@
 class OffersController < ApplicationController
   before_action :set_offer, only: %i(edit update destroy)
-  
+
   def new
     @offer = Offer.new
   end
@@ -18,6 +18,11 @@ class OffersController < ApplicationController
   def update
     @offer.update(update_params)
     render action: :index
+  end
+
+  def destroy
+    @offer.destroy
+    redirect_to offers_path
   end
 
   private

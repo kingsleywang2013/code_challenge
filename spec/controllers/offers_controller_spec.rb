@@ -12,7 +12,7 @@ RSpec.describe OffersController, type: :controller do
     end
 
     it 'destroys role' do
-      expect(assigns(@offer).destroyed?).to be true
+      expect(Offer.all.size).to be 0
     end
   end
 end
