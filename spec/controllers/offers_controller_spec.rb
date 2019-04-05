@@ -22,13 +22,13 @@ RSpec.describe OffersController, type: :controller do
     end
 
     it 'update with invalid data' do
-      patch :update, params: { id: @offer.id, season: 2019.1}
-      expect(@offer.errors.full_messages.size).not_to be 0
+      put :update, params: { id: @offer.id, offer: { season: 2019.1 } }
+      expect(flash[:error]).to match(/Sorry, your update failed/)
     end
 
     it 'update with valid data' do
-      patch :update, params: { id: @offer.id, season: 2018}
-      expect(@offer.errors.full_messages.size).to be 0
+      patch :update, params: { id: @offer.id, offer: { season: 2018 } }
+      expect(flash[:success]).to match(/You have updated successfully/)
     end
   end
 end
