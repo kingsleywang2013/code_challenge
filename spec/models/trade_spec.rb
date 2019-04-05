@@ -5,7 +5,8 @@ RSpec.describe Trade, type: :model do
     bid = Bid.create(season: 2019, grade: 'Test', price: 500, quantity: 25)
     offer = Offer.create(season: 2019, grade: 'Test', price: 455, quantity: 20)
     trade = Trade.create(bid: bid, offer: offer)
-    expect(trade.offer).to include offer
-    epxect(trade.bid).to include bid
+
+    expect(trade.offer).to eq offer
+    expect(trade.bid).to eq bid
   end
 end

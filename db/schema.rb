@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_05_001752) do
+ActiveRecord::Schema.define(version: 2019_04_05_013242) do
 
   create_table "bids", force: :cascade do |t|
     t.decimal "season"
@@ -35,6 +35,10 @@ ActiveRecord::Schema.define(version: 2019_04_05_001752) do
   create_table "trades", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "offer_id"
+    t.integer "bid_id"
+    t.index ["bid_id"], name: "index_trades_on_bid_id"
+    t.index ["offer_id"], name: "index_trades_on_offer_id"
   end
 
 end
