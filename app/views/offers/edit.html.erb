@@ -4,7 +4,7 @@
 
 <%= form_for @offer do |offer_form| %>
   <%= offer_form.label :grade %> <%= offer_form.text_field :grade %> <br />
-  <%= offer_form.label :season %><%= offer_form.text_field :season %><br />
+  <%= offer_form.label :season %><%= offer_form.text_field :season, disabled: true %><br />
   <%= offer_form.label :price %><%= offer_form.text_field :price %><br />
   <%= offer_form.label :quantity %><%= offer_form.text_field :quantity %><br />
   <%= submit_tag("Update") %>
