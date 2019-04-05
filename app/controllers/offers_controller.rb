@@ -1,14 +1,8 @@
 class OffersController < ApplicationController
-  def index
-
-  end
-
+  before_action :set_offer, only: %i(edit update destroy)
+  
   def new
     @offer = Offer.new
-  end
-
-  def edit
-    @offer = Offer.find_by(id: params[:id])
   end
 
   def create
@@ -19,16 +13,19 @@ class OffersController < ApplicationController
       @offer.valid?
       render action: :new
     end
-
-
   end
 
   def update
-    Offer.find_by(id: params[:id]).update(update_params)
+    @offer.update(update_params)
     render action: :index
   end
 
   private
+
+  def set_offer
+    @offer = Offer.find_by(id: params[:id])
+  end
+
   def update_params
     params.require(:offer).permit(:grade, :season, :price, :quantity)
   end
