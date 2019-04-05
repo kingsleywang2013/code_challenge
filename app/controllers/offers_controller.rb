@@ -16,8 +16,13 @@ class OffersController < ApplicationController
   end
 
   def update
-    @offer.update(update_params)
-    render action: :index
+    if @offer.update(update_params)
+      flash[:success] = 'You have updated successfully!'
+      redirect_to offers_path
+    else
+      flash[:error] = 'Sorry, your update failed!'
+      render action: :edit
+    end
   end
 
   def destroy

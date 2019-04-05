@@ -1,3 +1,5 @@
+<%= render partial: 'shared/error_message', locals: { object: @offer} if @offer.errors.full_messages.any? %>
+
 <h1>Offers#edit</h1>
 
 <%= form_for @offer do |offer_form| %>

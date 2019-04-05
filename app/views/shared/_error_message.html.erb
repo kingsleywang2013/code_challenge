@@ -1,0 +1,8 @@
+<div class="error-message">
+  <h3>Please check following errors and fix.</h3>
+  <ul>
+    <% object.errors.full_messages.each do |message| %>
+      <li class="error"><%= message %></li>
+    <% end %>
+  </ul>
+</div>
